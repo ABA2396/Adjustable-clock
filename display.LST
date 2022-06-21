@@ -1,4 +1,4 @@
-C51 COMPILER V9.54   DISPLAY                                                               06/20/2022 10:14:12 PAGE 1   
+C51 COMPILER V9.54   DISPLAY                                                               06/21/2022 11:20:36 PAGE 1   
 
 
 C51 COMPILER V9.54, COMPILATION OF MODULE DISPLAY
@@ -35,48 +35,46 @@ line level    source
   24          void reset_show() // 设置显示数值
   25          {
   26   1          int i = timer - ((timer >> 3) << 3);
-  27   1          unsigned char temp = 0;
-  28   1          shine_flag = timer < 500 && timer >= 0 ? 0 : 1; // 判断是否需要闪烁
-  29   1          switch (i)
-  30   1          {
-  31   2          case 0:
-  32   2              temp = (shine_flag && (key_position == 1)) ? 11 : hour / 10; // 显示时钟第一位 判断是否
-             -需要闪烁
-  33   2              break;
-  34   2          case 1:
-  35   2              temp = (shine_flag && (key_position == 1)) ? 11 : hour % 10; // 显示时钟第二位
-  36   2              break;
-  37   2          case 2:
-  38   2              temp = 10; // 显示分隔符 -
-  39   2              break;
-  40   2          case 3:
-  41   2              temp = (shine_flag && (key_position == 2)) ? 11 : min / 10; // 显示时钟第三位
-  42   2              break;
-  43   2          case 4:
-  44   2              temp = (shine_flag && (key_position == 2)) ? 11 : min % 10; // 显示时钟第四位
-  45   2              break;
-  46   2          case 5:
-  47   2              temp = 10; // 显示分隔符 -
-  48   2              break;
-  49   2          case 6:
-  50   2              temp = (shine_flag && (key_position == 3)) ? 11 : sec / 10; // 显示时钟第五位
-  51   2              break;
-  52   2          case 7:
-C51 COMPILER V9.54   DISPLAY                                                               06/20/2022 10:14:12 PAGE 2   
+  27   1          shine_flag = timer < 500 && timer >= 0 ? 0 : 1; // 判断是否需要闪烁
+  28   1          switch (i)
+  29   1          {
+  30   2          case 0:
+  31   2              show[i] = (shine_flag && (key_position == 1)) ? 11 : hour / 10; // 显示时钟第一位 判断是
+             -否需要闪烁
+  32   2              break;
+  33   2          case 1:
+  34   2              show[i] = (shine_flag && (key_position == 1)) ? 11 : hour % 10; // 显示时钟第二位
+  35   2              break;
+  36   2          case 2:
+  37   2              show[i] = 10; // 显示分隔符 -
+  38   2              break;
+  39   2          case 3:
+  40   2              show[i] = (shine_flag && (key_position == 2)) ? 11 : min / 10; // 显示时钟第三位
+  41   2              break;
+  42   2          case 4:
+  43   2              show[i] = (shine_flag && (key_position == 2)) ? 11 : min % 10; // 显示时钟第四位
+  44   2              break;
+  45   2          case 5:
+  46   2              show[i] = 10; // 显示分隔符 -
+  47   2              break;
+  48   2          case 6:
+  49   2              show[i] = (shine_flag && (key_position == 3)) ? 11 : sec / 10; // 显示时钟第五位
+  50   2              break;
+  51   2          case 7:
+  52   2              show[i] = (shine_flag && (key_position == 3)) ? 11 : sec % 10; // 显示时钟第六位
+C51 COMPILER V9.54   DISPLAY                                                               06/21/2022 11:20:36 PAGE 2   
 
-  53   2              temp = (shine_flag && (key_position == 3)) ? 11 : sec % 10; // 显示时钟第六位
-  54   2              break;
-  55   2          }
-  56   1          show[i] = temp;
-  57   1      }
+  53   2              break;
+  54   2          }
+  55   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    330    ----
+   CODE SIZE        =    319    ----
    CONSTANT SIZE    =     21    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =     19       2
+   DATA SIZE        =     19    ----
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.

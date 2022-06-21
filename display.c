@@ -24,34 +24,32 @@ void display(unsigned char d, unsigned char w) // 显示函数
 void reset_show() // 设置显示数值
 {
     int i = timer - ((timer >> 3) << 3);
-    unsigned char temp = 0;
     shine_flag = timer < 500 && timer >= 0 ? 0 : 1; // 判断是否需要闪烁
     switch (i)
     {
     case 0:
-        temp = (shine_flag && (key_position == 1)) ? 11 : hour / 10; // 显示时钟第一位 判断是否需要闪烁
+        show[i] = (shine_flag && (key_position == 1)) ? 11 : hour / 10; // 显示时钟第一位 判断是否需要闪烁
         break;
     case 1:
-        temp = (shine_flag && (key_position == 1)) ? 11 : hour % 10; // 显示时钟第二位
+        show[i] = (shine_flag && (key_position == 1)) ? 11 : hour % 10; // 显示时钟第二位
         break;
     case 2:
-        temp = 10; // 显示分隔符 -
+        show[i] = 10; // 显示分隔符 -
         break;
     case 3:
-        temp = (shine_flag && (key_position == 2)) ? 11 : min / 10; // 显示时钟第三位
+        show[i] = (shine_flag && (key_position == 2)) ? 11 : min / 10; // 显示时钟第三位
         break;
     case 4:
-        temp = (shine_flag && (key_position == 2)) ? 11 : min % 10; // 显示时钟第四位
+        show[i] = (shine_flag && (key_position == 2)) ? 11 : min % 10; // 显示时钟第四位
         break;
     case 5:
-        temp = 10; // 显示分隔符 -
+        show[i] = 10; // 显示分隔符 -
         break;
     case 6:
-        temp = (shine_flag && (key_position == 3)) ? 11 : sec / 10; // 显示时钟第五位
+        show[i] = (shine_flag && (key_position == 3)) ? 11 : sec / 10; // 显示时钟第五位
         break;
     case 7:
-        temp = (shine_flag && (key_position == 3)) ? 11 : sec % 10; // 显示时钟第六位
+        show[i] = (shine_flag && (key_position == 3)) ? 11 : sec % 10; // 显示时钟第六位
         break;
     }
-    show[i] = temp;
 }
