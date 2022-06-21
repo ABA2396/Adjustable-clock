@@ -5,8 +5,8 @@ sbit wela = P2 ^ 7;
 unsigned char code wei[] = {0xfe, 0xfd, 0xfb, 0xf7, 0xef, 0xdf, 0xbf, 0x7f, 0xff};                    // 八段位码
 unsigned char code duan[] = {0x3f, 0x06, 0x5b, 0x4f, 0x66, 0x6d, 0x7d, 0x07, 0x7f, 0x6f, 0x40, 0x00}; //  段码'0'~'9' '-' 'null'
 
-unsigned char show[8] = {0};
-int timer = 0, hour = 10, min = 0, sec = 0; // 时间变量
+unsigned char show[8]={0,0,10,0,0,10,0,0};
+int timer, hour, min, sec; // 时间变量
 
 void display(unsigned char d, unsigned char w) // 显示函数
 {

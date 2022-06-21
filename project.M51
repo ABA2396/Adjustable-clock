@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        06/21/2022  11:20:36  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        06/21/2022  11:23:16  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
@@ -59,19 +59,19 @@ LINK MAP OF MODULE:  project (?C_STARTUP)
             CODE    03A9H     00AEH     UNIT         ?PR?_ATOI?ATOI
             CODE    0457H     008CH     UNIT         ?C_C51STARTUP
             CODE    04E3H     0077H     UNIT         ?PR?SETTIME?UART
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/21/2022  11:20:36  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/21/2022  11:23:16  PAGE 2
 
 
             CODE    055AH     0060H     UNIT         ?PR?SERIAL_PORT?UART
-            CODE    05BAH     005FH     UNIT         ?C_INITSEG
-            CODE    0619H     0050H     UNIT         ?PR?KEY_FLAG?KEY
-            CODE    0669H     0025H     UNIT         ?PR?INIT?TIMER
-            CODE    068EH     001EH     UNIT         ?PR?_DISPLAY?DISPLAY
-            CODE    06ACH     0018H     UNIT         ?PR?_DELAY?DELAY
-            CODE    06C4H     0015H     UNIT         ?PR?_STRLEN?STRLEN
-            CODE    06D9H     0013H     UNIT         ?PR?_ISSPACE?ISSPACE
-            CODE    06ECH     000FH     UNIT         ?PR?_ISDIGIT?ISDIGIT
-            CODE    06FBH     000BH     UNIT         ?PR?MAIN?MAIN
+            CODE    05BAH     0050H     UNIT         ?PR?KEY_FLAG?KEY
+            CODE    060AH     004FH     UNIT         ?C_INITSEG
+            CODE    0659H     0025H     UNIT         ?PR?INIT?TIMER
+            CODE    067EH     001EH     UNIT         ?PR?_DISPLAY?DISPLAY
+            CODE    069CH     0018H     UNIT         ?PR?_DELAY?DELAY
+            CODE    06B4H     0015H     UNIT         ?PR?_STRLEN?STRLEN
+            CODE    06C9H     0013H     UNIT         ?PR?_ISSPACE?ISSPACE
+            CODE    06DCH     000FH     UNIT         ?PR?_ISDIGIT?ISDIGIT
+            CODE    06EBH     000BH     UNIT         ?PR?MAIN?MAIN
 
 
 
@@ -119,7 +119,7 @@ SEGMENT                           BIT_GROUP          DATA_GROUP
 
 
 
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/21/2022  11:20:36  PAGE 3
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/21/2022  11:23:16  PAGE 3
 
 
 SYMBOL TABLE OF MODULE:  project (?C_STARTUP)
@@ -165,21 +165,21 @@ SYMBOL TABLE OF MODULE:  project (?C_STARTUP)
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:00B0H         PUBLIC        P3
   D:0008H         SYMBOL        shine_flag
-  C:06FBH         PUBLIC        main
+  C:06EBH         PUBLIC        main
   D:0009H         SYMBOL        ch
   D:001DH         SYMBOL        k_flag
   D:001EH         SYMBOL        i
   D:001FH         SYMBOL        k
   -------         PROC          MAIN
-  C:06FBH         LINE#         3
-  C:06FBH         LINE#         4
-  C:06FBH         LINE#         5
-  C:06FEH         LINE#         6
-  C:06FEH         LINE#         7
-  C:06FEH         LINE#         8
-  C:0701H         LINE#         9
-  C:0704H         LINE#         10
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/21/2022  11:20:36  PAGE 4
+  C:06EBH         LINE#         3
+  C:06EBH         LINE#         4
+  C:06EBH         LINE#         5
+  C:06EEH         LINE#         6
+  C:06EEH         LINE#         7
+  C:06EEH         LINE#         8
+  C:06F1H         LINE#         9
+  C:06F4H         LINE#         10
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/21/2022  11:23:16  PAGE 4
 
 
   -------         ENDPROC       MAIN
@@ -187,17 +187,17 @@ SYMBOL TABLE OF MODULE:  project (?C_STARTUP)
 
   -------         MODULE        DELAY
   C:0000H         SYMBOL        _ICE_DUMMY_
-  C:06ACH         PUBLIC        _delay
+  C:069CH         PUBLIC        _delay
   -------         PROC          _DELAY
   D:0006H         SYMBOL        ms
   -------         DO            
   D:0005H         SYMBOL        i
   -------         ENDDO         
-  C:06ACH         LINE#         3
-  C:06ACH         LINE#         4
-  C:06ACH         LINE#         6
-  C:06B6H         LINE#         7
-  C:06C3H         LINE#         9
+  C:069CH         LINE#         3
+  C:069CH         LINE#         4
+  C:069CH         LINE#         6
+  C:06A6H         LINE#         7
+  C:06B3H         LINE#         9
   -------         ENDPROC       _DELAY
   -------         ENDMOD        DELAY
 
@@ -207,7 +207,7 @@ SYMBOL TABLE OF MODULE:  project (?C_STARTUP)
   D:00B0H         PUBLIC        P3
   D:0053H         SYMBOL        shine_flag
   D:0054H         PUBLIC        key_position
-  C:0619H         PUBLIC        key_flag
+  C:05BAH         PUBLIC        key_flag
   C:0147H         PUBLIC        key_down
   D:0055H         SYMBOL        k_flag
   D:0056H         SYMBOL        i
@@ -215,31 +215,31 @@ SYMBOL TABLE OF MODULE:  project (?C_STARTUP)
   B:00B0H.1       PUBLIC        key2
   B:00B0H.2       PUBLIC        key3
   -------         PROC          KEY_FLAG
-  C:0619H         LINE#         5
-  C:0619H         LINE#         6
-  C:0619H         LINE#         7
-  C:0625H         LINE#         8
-  C:0628H         LINE#         9
-  C:0634H         LINE#         10
-  C:0634H         LINE#         11
-  C:063BH         LINE#         12
-  C:0647H         LINE#         13
-  C:064BH         LINE#         14
-  C:064BH         LINE#         15
-  C:064EH         LINE#         16
-  C:0651H         LINE#         17
-  C:0654H         LINE#         18
-  C:0657H         LINE#         19
-  C:065AH         LINE#         20
-  C:065DH         LINE#         21
-  C:0660H         LINE#         22
-  C:0663H         LINE#         23
-  C:0666H         LINE#         24
-  C:0666H         LINE#         25
-  C:0666H         LINE#         26
-  C:0668H         LINE#         27
+  C:05BAH         LINE#         5
+  C:05BAH         LINE#         6
+  C:05BAH         LINE#         7
+  C:05C6H         LINE#         8
+  C:05C9H         LINE#         9
+  C:05D5H         LINE#         10
+  C:05D5H         LINE#         11
+  C:05DCH         LINE#         12
+  C:05E8H         LINE#         13
+  C:05ECH         LINE#         14
+  C:05ECH         LINE#         15
+  C:05EFH         LINE#         16
+  C:05F2H         LINE#         17
+  C:05F5H         LINE#         18
+  C:05F8H         LINE#         19
+  C:05FBH         LINE#         20
+  C:05FEH         LINE#         21
+  C:0601H         LINE#         22
+  C:0604H         LINE#         23
+  C:0607H         LINE#         24
+  C:0607H         LINE#         25
+  C:0607H         LINE#         26
+  C:0609H         LINE#         27
   -------         ENDPROC       KEY_FLAG
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/21/2022  11:20:36  PAGE 5
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/21/2022  11:23:16  PAGE 5
 
 
   -------         PROC          KEY_DOWN
@@ -299,7 +299,7 @@ SYMBOL TABLE OF MODULE:  project (?C_STARTUP)
   -------         ENDMOD        KEY
 
   -------         MODULE        DISPLAY
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/21/2022  11:20:36  PAGE 6
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/21/2022  11:23:16  PAGE 6
 
 
   C:0000H         SYMBOL        _ICE_DUMMY_
@@ -319,22 +319,22 @@ SYMBOL TABLE OF MODULE:  project (?C_STARTUP)
   C:0026H         PUBLIC        reset_show
   D:004AH         SYMBOL        k_flag
   D:004BH         SYMBOL        i
-  C:068EH         PUBLIC        _display
+  C:067EH         PUBLIC        _display
   -------         PROC          _DISPLAY
   D:0007H         SYMBOL        d
   D:0005H         SYMBOL        w
-  C:068EH         LINE#         11
-  C:068EH         LINE#         12
-  C:068EH         LINE#         13
-  C:0691H         LINE#         14
-  C:0693H         LINE#         15
-  C:0695H         LINE#         16
-  C:069CH         LINE#         17
-  C:069EH         LINE#         18
-  C:06A0H         LINE#         19
-  C:06A7H         LINE#         20
-  C:06A9H         LINE#         21
-  C:06ABH         LINE#         22
+  C:067EH         LINE#         11
+  C:067EH         LINE#         12
+  C:067EH         LINE#         13
+  C:0681H         LINE#         14
+  C:0683H         LINE#         15
+  C:0685H         LINE#         16
+  C:068CH         LINE#         17
+  C:068EH         LINE#         18
+  C:0690H         LINE#         19
+  C:0697H         LINE#         20
+  C:0699H         LINE#         21
+  C:069BH         LINE#         22
   -------         ENDPROC       _DISPLAY
   -------         PROC          RESET_SHOW
   -------         DO            
@@ -359,7 +359,7 @@ SYMBOL TABLE OF MODULE:  project (?C_STARTUP)
   C:00CFH         LINE#         40
   C:00E7H         LINE#         41
   C:00E9H         LINE#         42
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/21/2022  11:20:36  PAGE 7
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/21/2022  11:23:16  PAGE 7
 
 
   C:00E9H         LINE#         43
@@ -419,7 +419,7 @@ SYMBOL TABLE OF MODULE:  project (?C_STARTUP)
   C:04E3H         LINE#         24
   C:04E3H         LINE#         25
   C:04E3H         LINE#         27
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/21/2022  11:20:36  PAGE 8
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/21/2022  11:23:16  PAGE 8
 
 
   C:04FAH         LINE#         28
@@ -450,7 +450,7 @@ SYMBOL TABLE OF MODULE:  project (?C_STARTUP)
   D:0087H         PUBLIC        PCON
   D:0098H         PUBLIC        SCON
   D:0089H         PUBLIC        TMOD
-  C:0669H         PUBLIC        init
+  C:0659H         PUBLIC        init
   B:00A8H.1       PUBLIC        ET0
   B:00A8H.3       PUBLIC        ET1
   D:008CH         PUBLIC        TH0
@@ -463,26 +463,26 @@ SYMBOL TABLE OF MODULE:  project (?C_STARTUP)
   D:0058H         SYMBOL        k_flag
   D:0059H         SYMBOL        i
   -------         PROC          INIT
-  C:0669H         LINE#         3
-  C:0669H         LINE#         4
-  C:0669H         LINE#         5
-  C:066CH         LINE#         6
-  C:066FH         LINE#         7
-  C:0672H         LINE#         8
-  C:0675H         LINE#         9
-  C:0678H         LINE#         10
-  C:067BH         LINE#         11
-  C:067DH         LINE#         12
-  C:067FH         LINE#         13
-  C:0682H         LINE#         14
-  C:0685H         LINE#         15
-  C:0687H         LINE#         16
-  C:0689H         LINE#         17
-  C:068BH         LINE#         18
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/21/2022  11:20:36  PAGE 9
+  C:0659H         LINE#         3
+  C:0659H         LINE#         4
+  C:0659H         LINE#         5
+  C:065CH         LINE#         6
+  C:065FH         LINE#         7
+  C:0662H         LINE#         8
+  C:0665H         LINE#         9
+  C:0668H         LINE#         10
+  C:066BH         LINE#         11
+  C:066DH         LINE#         12
+  C:066FH         LINE#         13
+  C:0672H         LINE#         14
+  C:0675H         LINE#         15
+  C:0677H         LINE#         16
+  C:0679H         LINE#         17
+  C:067BH         LINE#         18
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/21/2022  11:23:16  PAGE 9
 
 
-  C:068DH         LINE#         19
+  C:067DH         LINE#         19
   -------         ENDPROC       INIT
   -------         PROC          TIME0
   C:023AH         LINE#         21
@@ -516,7 +516,7 @@ SYMBOL TABLE OF MODULE:  project (?C_STARTUP)
   -------         ENDMOD        ?C?SIDIV
 
   -------         MODULE        STRLEN
-  C:06C4H         PUBLIC        _STRLEN
+  C:06B4H         PUBLIC        _STRLEN
   -------         ENDMOD        STRLEN
 
   -------         MODULE        ATOI
@@ -536,15 +536,15 @@ SYMBOL TABLE OF MODULE:  project (?C_STARTUP)
   -------         ENDMOD        ?C?UIDIV
 
   -------         MODULE        ISDIGIT
-  C:06ECH         PUBLIC        _isdigit
+  C:06DCH         PUBLIC        _isdigit
   -------         ENDMOD        ISDIGIT
 
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/21/2022  11:20:36  PAGE 10
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/21/2022  11:23:16  PAGE 10
 
 
   -------         MODULE        ISSPACE
-  C:06D9H         PUBLIC        _isspace
+  C:06C9H         PUBLIC        _isspace
   -------         ENDMOD        ISSPACE
 
-Program Size: data=90.1 xdata=0 code=1790
+Program Size: data=90.1 xdata=0 code=1774
 LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
