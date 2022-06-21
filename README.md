@@ -11,3 +11,5 @@
 - 数码管段选P2.6
 - 数码管位选P2.7
 - 串口波特率4800
+
+https://github.com/ABA2396/Adjustable-clock
