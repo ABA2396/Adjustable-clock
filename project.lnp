@@ -1,0 +1,9 @@
+"STARTUP.obj",
+"main.obj",
+"delay.obj",
+"key.obj",
+"display.obj",
+"uart.obj",
+"timer.obj" 
+TO "project" 
+RAMSIZE(256) 

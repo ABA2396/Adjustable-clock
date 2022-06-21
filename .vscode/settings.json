@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "reg51.h": "c",
+        "REG51.H": "cpp",
+        "main.h": "c",
+        "intrins.h": "c",
+        "key.h": "c",
+        "display.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
+}

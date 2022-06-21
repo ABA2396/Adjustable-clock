@@ -1,0 +1,69 @@
+C51 COMPILER V9.54   TIMER                                                                 06/20/2022 10:12:08 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE TIMER
+OBJECT MODULE PLACED IN timer.OBJ
+COMPILER INVOKED BY: D:\keilC51\C51\BIN\C51.EXE timer.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include "timer.h"
+   2          
+   3          void init()
+   4          {
+   5   1          PCON |= 0x80;              // 使能波特率倍速位SMOD
+   6   1          SCON = 0x50;               // 8位数据,可变波特率
+   7   1          TMOD |= 0x01;              // 设置定时器模式
+   8   1          TMOD |= 0x20;              // 设置定时器模式
+   9   1          TL1 = 0xF4;                // 设置定时初始值
+  10   1          TH1 = 0xF4;                // 设置定时重载值
+  11   1          ET1 = 0;                   // 禁止定时器1中断
+  12   1          TR1 = 1;                   // 定时器1开始计时
+  13   1          TH0 = (65536 - 921) / 256; // 高8位 计时间隔为1ms
+  14   1          TL0 = (65536 - 921) % 256; // 低8位 计时间隔为1ms
+  15   1          EA = 1;                    // 允许所有中断
+  16   1          ES = 1;                    // 开启串口中断
+  17   1          ET0 = 1;                   // 打开定时器0的中断开关
+  18   1          TR0 = 1;                   // 开启定时器0计数
+  19   1      }
+  20          
+  21          void time0() interrupt 1 // 计时器0中断函数
+  22          {
+  23   1          TH0 = (65536 - 921) / 256;
+  24   1          TL0 = (65536 - 921) % 256;
+  25   1          if (++timer >= 1000) // 1000ms
+  26   1          {
+  27   2              timer = 0; // 重置计时器
+  28   2              if (++sec >= 60)
+  29   2              {
+  30   3                  sec = 0;
+  31   3                  if (++min >= 60)
+  32   3                  {
+  33   4                      min = 0;
+  34   4                      if (++hour >= 24)
+  35   4                      {
+  36   5                          hour = 0;
+  37   5                      }
+  38   4                  }
+  39   3              }
+  40   2          }
+  41   1          if (++i >= 8) // 数码管显示位置
+  42   1              i = 0;
+  43   1          display(show[i], i);
+  44   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    222    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      3    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+C51 COMPILER V9.54   TIMER                                                                 06/20/2022 10:12:08 PAGE 2   
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
